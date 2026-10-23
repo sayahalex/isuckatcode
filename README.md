@@ -31,4 +31,4 @@ This is a static journal, with no account, database, upload form, or visitor tra
 
 ## Submission
 
-The assignment requires a **public repository**. A private Sites deployment alone does not satisfy that requirement. Push this whole folder, including `docs/screenshot.png`, `AI-NOTES.md`, and `DEMO.md`, to your public repository. A repository destination has not yet been provided.
+The assignment requires a **public repository**. This project is available publicly at [sayahalex/isuckatcode](https://github.com/sayahalex/isuckatcode). A private Sites deployment alone does not satisfy that requirement. Keep the complete project in this public repository, including `docs/screenshot.png`, `AI-NOTES.md`, and `DEMO.md`.
