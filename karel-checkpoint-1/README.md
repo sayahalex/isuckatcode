@@ -7,10 +7,10 @@ Karel work for COSC 10001 at TCU. The basic program moves to a beeper and picks 
 | Program | World | Expected result |
 | --- | --- | --- |
 | MyKarel | worlds/KarelStartWorld.w | Pick up the beeper at (2,1); finish facing east |
-| LShapeKarel | worlds/LShape.w | Move three squares north, turn right, move three squares east, collect six beepers at (4,4) |
+| LShapeKarel | worlds/LShape.w | Start at (1,2) facing north, follow the wall to its opening, turn east, collect six beepers at (4,3) |
 | AgentLShapeKarel | worlds/LShapeStack.w | Collect all six beepers; return to (1,1) facing east |
 
-The guided LShapeKarel uses Isayah's fixed three-by-three route. The extension adapts to the wall height and pile position, then returns home. It also handles worlds/LShapeTall.w, which has a taller wall and two beepers. The wall must rise from the bottom boundary beside Karel, and the beeper must be on the clear row just above it. Arbitrary mazes are outside this program's scope.
+LShapeKarel follows Isayah's edited north-facing map. It moves north while the wall blocks its right, turns east at the opening, then reaches and collects the beeper pile. The path must be clear and the pile must be east of that opening. The extension adapts to the wall height and pile position, then returns home. It also handles worlds/LShapeTall.w, which has a taller wall and two beepers. The wall must rise from the bottom boundary beside Karel, and the beeper must be on the clear row just above it. Arbitrary mazes are outside this program's scope.
 
 ## Run
 
@@ -34,15 +34,15 @@ Reset the world before repeating a run.
 
 ## Authorship and assignment requirements
 
-Isayah supplied the basic commands during a guided walkthrough and specified three squares north, a right turn, three squares east, and a loop to collect six beepers. ChatGPT supplied the Java scaffolding, custom map coordinates, custom solution, scripts, and documentation. See NOTES.md for the precise division of work.
+Isayah supplied the basic commands and route choices during a guided walkthrough, then personally edited and uploaded worlds/LShape.w. ChatGPT supplied the Java scaffolding, initial example maps, custom solution and later fix, extension, scripts, and documentation. See NOTES.md for the precise division of work.
 
-The L-shaped map was generated as text from Isayah's design choice. Isayah has not yet confirmed creating or editing it with Edit World, as the rubric requests. Local graphical runs also remain to be confirmed.
+The final custom map is Isayah's uploaded Edit World revision of an AI-generated example. He reported that the earlier program did not solve this revision; ChatGPT corrected the start-direction and route assumptions. A successful graphical run of the corrected version remains to be confirmed.
 
 Course specification: https://washingtonwei.github.io/cosc-10001/syllabus/#build-checkpoints-2-10
 
 ## Verification
 
-After the route update, all Java files compiled with Java 17 against the included course library. Headless runs passed for all three programs, including the extension on the taller test world. These checks do not replace reviewing the graphical results on the student's laptop.
+After integrating Isayah's edited map and fixing the route, all Java files compiled with Java 17 against the included course library. Headless runs passed for all three programs, including the extension on the taller test world. These checks do not replace reviewing the graphical results on the student's laptop.
 
 ## Repository link
 

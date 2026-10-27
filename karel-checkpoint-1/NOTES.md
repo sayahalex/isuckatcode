@@ -1,18 +1,13 @@
 # Checkpoint 1 Notes
 
-- What I supplied: the two commands move(); and pickBeeper(); during a guided walkthrough; I selected an L-shaped path around a wall for the custom world.
-- Help with those commands: ChatGPT corrected punctuation after move(): and corrected pickupBeeper(); to pickBeeper(); before I typed the two-command sequence.
-- What ChatGPT wrote: the Java class wrappers, LShapeKarel, the exact custom map, run scripts, and documentation.
-- Existing world: KarelStartWorld.w is the file I uploaded. Its original authorship has not been established here.
-- Custom-world status: ChatGPT generated LShape.w from my requested design; I have not yet confirmed editing it through Edit World.
-- Earlier agent error: the previous package targeted the course default beeper world instead of my uploaded world. This version uses my uploaded world, with its beeper at (2,1), for MyKarel.
-- Laptop test results: not yet supplied. I need to run each program and record what actually happens.
-- AI Use Statement: I asked ChatGPT to help assemble Checkpoint 1 using my commands and route choice. ChatGPT wrote the custom implementation and supporting files. I will review and test the result before submission.
-- Agent extension: ChatGPT wrote AgentLShapeKarel in a separate commit. It reuses the L-shaped route, collects all remaining beepers, and returns to the starting corner facing east.
-- Additional test world: ChatGPT created LShapeTall.w to check a different wall height and beeper-pile size.
-- Checks by ChatGPT: all sources compiled against the supplied course library with Java 17. Headless runs passed for MyKarel, LShapeKarel, AgentLShapeKarel on LShapeStack.w, and AgentLShapeKarel on LShapeTall.w. Both extension runs ended at (1,1), facing east, with zero beepers remaining.
-- Verification limit: graphical runs and student edits through Edit World have not been observed here.
-
-- Later directions from Isayah: move toward the top of the screen three squares, turn right, move three squares, and loop to pick up a pile of six beepers. ChatGPT translated those directions into LShapeKarel and placed the pile at (4,4).
-- Map correction: the earlier (4,3) target did not match that route. LShape.w and LShapeStack.w now match the student's three-by-three route.
-- Extension update: AgentLShapeKarel now extends Karel directly, following the course example, and independently adapts to wall height and pile position before collecting and returning home.
+- What I wrote and planned: I supplied move(); and pickBeeper(); during a guided walkthrough. For the custom route, I asked for movement up the screen, a right turn, movement toward a pile, and a loop to collect six beepers.
+- Syntax help: ChatGPT corrected punctuation after move(): and corrected pickupBeeper(); to pickBeeper(); before I typed the two-command sequence.
+- World I edited: I used Edit World and uploaded LShape.w. My saved world is 6 by 4, starts Karel at (1,2) facing north, has six beepers at (4,3), and includes my edited wall layout. It began from ChatGPT's example map.
+- What ChatGPT wrote: Java scaffolding, the custom route implementation, the agent extension, initial example worlds, run scripts, and documentation. I supplied the edited LShape.w used in the final custom program.
+- What went wrong on my laptop: I reported that LShapeKarel did not run my edited map correctly. I did not provide an exact error message.
+- Cause and fix: the previous code expected Karel at (1,1) facing east and used a fixed three-by-three route. My uploaded map starts at (1,2) facing north. ChatGPT removed the initial left turn and fixed move count, used rightIsBlocked() to reach the opening, then turned right and used noBeepersPresent() to reach the pile.
+- Agent extension: AgentLShapeKarel was added in a separate commit. It adapts to a wall beside an east-facing start, collects a whole pile, and returns home. It uses its own LShapeStack.w and LShapeTall.w maps, not my north-facing custom map.
+- Current automated results: ChatGPT compiled all three Java programs against the course library with Java 17. MyKarel on KarelStartWorld.w finished at (2,1) east. The corrected LShapeKarel on my uploaded LShape.w finished at (4,3) east and collected all six beepers. AgentLShapeKarel passed on LShapeStack.w and LShapeTall.w, returning to (1,1) east. All four runs left zero beepers.
+- Verification limit: those results use the course library's headless mode. A successful laptop run of the corrected custom program has not yet been reported.
+- Existing starter map: KarelStartWorld.w is the file I originally supplied; its original authorship has not been established here.
+- AI Use Statement: I used ChatGPT to translate my commands and route choices into Java, assemble the repository, and fix a mismatch between the program and my edited world. I edited and uploaded the final custom world. ChatGPT wrote the custom implementation, extension, and supporting documentation, and ran the automated checks.

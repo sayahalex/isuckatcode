@@ -1,8 +1,9 @@
-Dimension: (6, 5)
-Wall: (2, 1) West
-Wall: (2, 2) West
-Wall: (2, 3) West
-Beeper: (4, 4) 6
-BeeperBag: INFINITY
-Karel: (1, 1) East
-Speed: 0.5
+Dimension: (6, 4)
+Wall: (2, 1) west
+Wall: (2, 2) west
+Wall: (2, 4) west
+Wall: (4, 4) west
+Beeper: (4, 3) 6
+Karel: (1, 2) north
+BeeperBag: INFINITE
+Speed: 0.50
