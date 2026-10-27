@@ -1,16 +1,39 @@
-// ChatGPT extension, added after the basic program and guided custom example.
-// Collects a whole pile, then returns to the starting corner facing east.
-public class AgentLShapeKarel extends LShapeKarel {
+import stanford.karel.*;
+
+// AI extension: adapt to the wall height and pile location, collect the pile,
+// then return home. Uses only Karel and the conditions taught in class.
+public class AgentLShapeKarel extends Karel {
     public void run() {
-        super.run();
-        collectRemainingBeepers();
+        climbBesideWall();
+        turnRight();
+        reachBeepers();
+        collectBeepers();
         returnHome();
     }
 
-    private void collectRemainingBeepers() {
+    private void climbBesideWall() {
+        turnLeft();
+        while (rightIsBlocked()) {
+            move();
+        }
+    }
+
+    private void reachBeepers() {
+        while (noBeepersPresent()) {
+            move();
+        }
+    }
+
+    private void collectBeepers() {
         while (beepersPresent()) {
             pickBeeper();
         }
+    }
+
+    private void turnRight() {
+        turnLeft();
+        turnLeft();
+        turnLeft();
     }
 
     private void returnHome() {

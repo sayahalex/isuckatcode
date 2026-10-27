@@ -12,3 +12,7 @@
 - Additional test world: ChatGPT created LShapeTall.w to check a different wall height and beeper-pile size.
 - Checks by ChatGPT: all sources compiled against the supplied course library with Java 17. Headless runs passed for MyKarel, LShapeKarel, AgentLShapeKarel on LShapeStack.w, and AgentLShapeKarel on LShapeTall.w. Both extension runs ended at (1,1), facing east, with zero beepers remaining.
 - Verification limit: graphical runs and student edits through Edit World have not been observed here.
+
+- Later directions from Isayah: move toward the top of the screen three squares, turn right, move three squares, and loop to pick up a pile of six beepers. ChatGPT translated those directions into LShapeKarel and placed the pile at (4,4).
+- Map correction: the earlier (4,3) target did not match that route. LShape.w and LShapeStack.w now match the student's three-by-three route.
+- Extension update: AgentLShapeKarel now extends Karel directly, following the course example, and independently adapts to wall height and pile position before collecting and returning home.

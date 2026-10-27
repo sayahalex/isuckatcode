@@ -1,32 +1,31 @@
 import stanford.karel.*;
 
-// ChatGPT implementation of Isayah's requested L-shaped route around a wall.
-// Assumes Karel starts facing east beside the wall, with a beeper to the east
-// after the northward detour. It is not a general maze solver.
+// Isayah specified: three squares north, right, three squares east,
+// then a loop to collect the pile. ChatGPT translated that plan into Java.
 public class LShapeKarel extends Karel {
     public void run() {
-        climbBesideWall();
-        turnRight();
-        reachBeeper();
-        pickBeeper();
-    }
-
-    private void climbBesideWall() {
         turnLeft();
-        while (rightIsBlocked()) {
-            move();
-        }
+        moveThreeSquares();
+        turnRight();
+        moveThreeSquares();
+        collectBeepers();
     }
 
-    private void reachBeeper() {
-        while (noBeepersPresent()) {
-            move();
-        }
+    private void moveThreeSquares() {
+        move();
+        move();
+        move();
     }
 
     private void turnRight() {
         turnLeft();
         turnLeft();
         turnLeft();
+    }
+
+    private void collectBeepers() {
+        while (beepersPresent()) {
+            pickBeeper();
+        }
     }
 }
