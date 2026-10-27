@@ -7,7 +7,7 @@ Karel work for COSC 10001 at TCU. The basic program moves to a beeper and picks 
 | Program | World | Expected result |
 | --- | --- | --- |
 | MyKarel | worlds/KarelStartWorld.w | Pick up the beeper at (2,1); finish facing east |
-| LShapeKarel | worlds/LShape.w | Start at (1,2) facing north, follow the wall to its opening, turn east, collect six beepers at (4,3) |
+| LShapeKarel | worlds/LShape.w | Start at (1,1) facing north, follow the wall to its opening, turn east, collect six beepers at (4,3) |
 | AgentLShapeKarel | worlds/LShapeStack.w | Collect all six beepers; return to (1,1) facing east |
 
 LShapeKarel follows Isayah's edited north-facing map. It moves north while the wall blocks its right, turns east at the opening, then reaches and collects the beeper pile. The path must be clear and the pile must be east of that opening. The extension adapts to the wall height and pile position, then returns home. It also handles worlds/LShapeTall.w, which has a taller wall and two beepers. The wall must rise from the bottom boundary beside Karel, and the beeper must be on the clear row just above it. Arbitrary mazes are outside this program's scope.
