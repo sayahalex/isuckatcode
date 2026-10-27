@@ -36,7 +36,7 @@ Reset the world before repeating a run.
 
 Isayah supplied the basic commands and route choices during a guided walkthrough, then personally edited and uploaded worlds/LShape.w. ChatGPT supplied the Java scaffolding, initial example maps, custom solution and later fix, extension, scripts, and documentation. See NOTES.md for the precise division of work.
 
-The final custom map is Isayah's uploaded Edit World revision of an AI-generated example. He reported that the earlier program did not solve this revision; ChatGPT corrected the start-direction and route assumptions. A successful graphical run of the corrected version remains to be confirmed.
+The final custom map is Isayah's uploaded Edit World revision of an AI-generated example. He reported that the earlier program did not solve this revision; ChatGPT corrected the start-direction and route assumptions. Isayah subsequently reported successfully running the corrected LShapeKarel with his LShape world on his laptop.
 
 Course specification: https://washingtonwei.github.io/cosc-10001/syllabus/#build-checkpoints-2-10
 
